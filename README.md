@@ -1,2 +1,2 @@
-# odoo_development-
+# odoo_development
 odoo development Training
