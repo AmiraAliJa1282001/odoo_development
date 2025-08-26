@@ -1,0 +1,22 @@
+<odoo>
+    <!-- Inherit the original report -->
+    <template id="report_property_inherit" inherit_id="estate.report_property">
+        <xpath expr="//div[@class='invoice_info']" position="inside">
+            
+            <t t-if="property.state == 'sold'">
+                <div style="margin-top: 20px;">
+                    <h4><strong>!!!Invoice has already been created!!!</strong></h4>
+                    <h4><strong>Invoice Information:</strong></h4>
+                    <t t-if="property.invoice_property_id">
+                        <p>Invoice Number: <t t-esc="property.invoice_property_id.name"/></p>
+                        <p>Total Amount: <t t-esc="property.invoice_property_id.amount_total"/></p>
+                    </t>
+                    <t t-else="">
+                        <p>No invoice linked.</p>
+                    </t>
+                </div>
+            </t>
+
+        </xpath>
+    </template>
+</odoo>
