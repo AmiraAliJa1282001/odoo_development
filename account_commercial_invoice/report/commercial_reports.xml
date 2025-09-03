@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_commercial_invoice_2MCompany" model="ir.actions.report">
+        <field name="name">commercial_Invoice</field> 
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">account_commercial_invoice.report_commercial_invoice</field>
+        <field name="report_file">account_commercial_invoice.report_commercial_invoice</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>
