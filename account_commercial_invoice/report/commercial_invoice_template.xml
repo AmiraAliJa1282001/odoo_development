@@ -4,27 +4,31 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <div class="page">
-                    <div class="header" style="border-bottom:2px solid #000;">
+                    <div class="header" >
+                            <table style="border:1px solid #000; width:100%;">
+                                <tr>
+                                    <td style="width:65%; text-align:left; vertical-align:middle; ">
+                                        <div style="font-weight:bold; font-size:16px; ">
+                                            <span t-field="o.company_id.name" style=""/>
+                                        </div>
+                                        <div style="font-size:14px; margin-top:5px;">
+                                            <span t-field="o.company_id.partner_id.comment" />
+                                        </div>
+                                    </td>
+                                
                     
-                            <td style="width:100px; text-align:left; vertical-align:middle; padding:10px;">
-                                <div style="font-weight:bold; font-size:16px; width:60%;">
-                                    <span t-field="o.company_id.name" style="width:60%;"/>
-                                </div>
-                                <div style="font-size:14px; margin-top:5px;">
-                                    <span t-field="o.company_id.partner_id.comment" />
-                                </div>
-                            </td>
+                                    <td style=" text-align:right; vertical-align:middle; ">
+                                        <img t-if="o.company_id.logo"
+                                            t-att-src="image_data_uri(o.company_id.logo)"
+                                            style="max-width:450px;"
+                                        />
+                                    </td>
+                                </tr>
+                            </table>
                             
-                   
-                            <td style="width:35%; text-align:right; vertical-align:middle; ">
-                                <img t-if="o.company_id.logo"
-                                     t-att-src="image_data_uri(o.company_id.logo)"
-                                     style="max-width:450px; max-height:150px;"
-                                />
-                            </td>
                     </div>
                     <!-- Header -->
-                    <table style="width:100%; border:2px solid #000; margin-bottom:20px; border-collapse:collapse; margin:0; ">
+                    <table style="width:100%; border:1px solid #000; margin-bottom:20px; border-collapse:collapse; margin:0; ">
                         
                         <tr>
                             <td style=" text-align:left; vertical-align:middle; padding:10px;">
@@ -33,48 +37,48 @@
                             <div style="font-weight:bold;"> Email:   <span t-field="o.company_id.email" style="width:50%;"/> </div>
                         
                             </td>
-                            <td style="width:35%; text-align:right; vertical-align:top; border-left:2px solid #000;">
+                            <td style="width:35%; text-align:right; vertical-align:top; border-left:1px solid #000;">
                                 <h2 style="text-align:center; background-color:#bbb; margin:0; padding:15px;">COMMERCIAL INVOICE</h2>
-                                <table style="border-top:2px solid #000; width:100%; margin:0;">
+                                <table style="border-top:1px solid #000; width:100%; margin:0;">
                                     <tr>
-                                        <td style="text-align:left; border-right:2px solid #000; padding-left:10px; padding-right:10px;">Ref No:</td>
+                                        <td style="text-align:left; border-right:1px solid #000; padding-left:10px; padding-right:10px;">Ref No:</td>
                                         <td style="text-align:center;"><span t-field="o.ref"/></td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr>
-                            <table style="border:2px solid #000; width:100%; margin:0;">
+                            <table style="border:1px solid #000; width:100%; margin:0;">
                                 <tr>
-                                    <td style="border-right:2px solid #000; width:20%;">Date:</td>
-                                    <td style="border-bottom:2px solid #000; width:80%;"><span t-field="o.invoice_date"/></td>
+                                    <td style="border-right:1px solid #000; width:20%;">Date:</td>
+                                    <td style="border-bottom:1px solid #000; width:80%;"><span t-field="o.invoice_date"/></td>
                                     
                                 </tr>
                                  <tr>
-                                    <td style="border-right:2px solid #000;width:20%;">To:</td>
-                                    <td style="border-bottom:2px solid #000;width:80%;"><span t-field="o.partner_id"/></td>
+                                    <td style="border-right:1px solid #000;width:20%;">To:</td>
+                                    <td style="border-bottom:1px solid #000;width:80%;"><span t-field="o.partner_id"/></td>
                                     
                                 </tr>
                                  <tr>
-                                    <td style="border-right:2px solid #000;width:20%;">Project:</td>
-                                    <td style="border-bottom:2px solid #000;width:80%;"><span t-field="o.name"/></td>
+                                    <td style="border-right:1px solid #000;width:20%;">Project:</td>
+                                    <td style="border-bottom:1px solid #000;width:80%;"><span t-field="o.name"/></td>
                                     
                                 </tr>
                                  <tr>
-                                    <td style="border-right:2px solid #000; width:20%;">Contract Ref:</td>
+                                    <td style="border-right:1px solid #000; width:20%;">Contract Ref:</td>
                                     <td style="width:80%;"><span t-field="o.ref"/></td>
                                     
                                 </tr>
                             </table>
                         </tr>
                         <tr style="width:100%;">
-                            <table class="table" style="border:2px solid #000; width:100%;">
+                            <table class="table" style="border:1px solid #000; width:100%;">
                                 <thead style="background-color:#bbb;">
                                     <tr style="width:100%;">
-                                        <td style="border-right:2px solid #000; width:10%; text-align: center;">ITEM</td>
-                                        <td style="border-right:2px solid #000; width:50%; text-align: center;">DESCRIPTION</td>
-                                        <td style="border-right:2px solid #000;width:10%; text-align: center;">QTY</td>
-                                        <td style="border-right:2px solid #000;width:10%; text-align: center;">PRICE</td>
+                                        <td style="border-right:1px solid #000; width:10%; text-align: center;">ITEM</td>
+                                        <td style="border-right:1px solid #000; width:50%; text-align: center;">DESCRIPTION</td>
+                                        <td style="border-right:1px solid #000;width:10%; text-align: center;">QTY</td>
+                                        <td style="border-right:1px solid #000;width:10%; text-align: center;">PRICE</td>
                                         <td style="width:20%; text-align: center;">AMOUNT(QAR)</td>
                                     </tr>
                                 </thead>
@@ -84,47 +88,47 @@
                                         <t t-if="line.display_type == 'product'">
                                             <t t-set="letter_idx" t-value="letter_idx + 1"/>
                                            
-                                            <td style="border-right:2px solid #000; text-align: center;">
+                                            <td style="border-right:1px solid #000; text-align: center;">
                                                  <span t-esc="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[letter_idx - 1]"/>
                                             </td>
-                                            <td style="border-right:2px solid #000;">
+                                            <td style="border-right:1px solid #000; padding: 10px 5px;">
                                             <span t-field="line.name"/>
                                              <br/>
                                             </td>
-                                            <td style="border-right:2px solid #000; text-align: center;">
+                                            <td style="border-right:1px solid #000; text-align: center; padding: 10px 5px;">
                                             <span t-field="line.quantity"/>
                                             </td>
-                                            <td style="border-right:2px solid #000; text-align: center;">
+                                            <td style="border-right:1px solid #000; text-align: center; padding: 10px 5px;">
                                             <span t-field="line.price_unit"/>
                                             </td>
-                                            <td  style="text-align: center;">
+                                            <td  style="text-align: center; padding: 20px 10px;">
                                             <span t-field="line.price_subtotal"/>
                                             </td>
                                         </t>
                                         <t t-elif="line.display_type == 'line_section'">
-                                            <td style="border-right:2px solid #000;"></td>
-                                            <td style="font-weight:bold; border-right:2px solid #000;">
+                                            <td style="border-right:1px solid #000;"></td>
+                                            <td style="font-weight:bold; border-right:1px solid #000; padding: 10px 5px;">
                                             <span t-field="line.name"/>
                                              <br/>
                                             </td>
-                                            <td style="border-right:2px solid #000;"></td>
-                                            <td style="border-right:2px solid #000;"></td>
+                                            <td style="border-right:1px solid #000;"></td>
+                                            <td style="border-right:1px solid #000;"></td>
                                             <td></td>
 
                                         </t>
                                         <t t-elif="line.display_type == 'line_note'">
                                             <t t-set="letter_idx" t-value="letter_idx + 1"/>
                                            
-                                            <td style="border-right:2px solid #000; text-align: center;">
+                                            <td style="border-right:1px solid #000; text-align: center;">
                                                  <span t-esc="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[letter_idx - 1]"/>
                                             </td>
                                     
-                                            <td style="font-style:italic; border-right:2px solid #000;">
+                                            <td style="font-style:italic; border-right:1px solid #000;">
                                                 <span t-field="line.name"/>
                                                 <br/>
                                             </td>
-                                            <td style="border-right:2px solid #000;"></td>
-                                            <td style="border-right:2px solid #000;"></td>
+                                            <td style="border-right:1px solid #000;"></td>
+                                            <td style="border-right:1px solid #000;"></td>
                                             <td></td>
 
                                         </t>
@@ -133,22 +137,22 @@
                                     <tr style="padding:20px; border-bottom:1px solid #fff;">
                                         <t t-set="letter_idx" t-value="letter_idx + 1"/>
                                            
-                                        <td style="border-right:2px solid #000; text-align: center;">
+                                        <td style="border-right:1px solid #000; text-align: center;">
                                                 <span t-esc="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[letter_idx - 1]"/>
                                         </td>
-                                        <td style="border-right:2px solid #000; border-bottom:2px solid #000;">
+                                        <td style="border-right:1px solid #000; border-bottom:1px solid #000;">
                                             <div><strong style="text-decoration:underline;">Total amount due against this invoice</strong></div>
                                             <br/>
                                             <div>
                                                 <span t-esc="o.currency_id.amount_to_text(o.amount_total)"/> Only.
                                             </div>
                                         </td>
-                                        <td style="border-right:2px solid #000; border-bottom:2px solid #000;"></td>
-                                        <td style="border-right:2px solid #000; border-bottom:2px solid #000;"></td>
-                                        <td  style="border-bottom:2px solid #000;">
-                                            <br/>
-                                            <br/>
-                                            <div style="border-top:2px double #000; margin:0; text-align: center;">
+                                        <td style="border-right:1px solid #000; border-bottom:1px solid #000;"></td>
+                                        <td style="border-right:1px solid #000; border-bottom:1px solid #000;"></td>
+                                        <td  style="border-bottom:1px solid #000;">
+                                            <hr/>
+                                            <hr/>
+                                            <div style=" margin:0; text-align: center;">
                                                 
                                                 QAR <span t-esc="o.amount_total" />
                                             </div>
@@ -157,10 +161,10 @@
                                     <tr style="padding:20px; border-bottom:1px solid #fff;">
                                         <t t-set="letter_idx" t-value="letter_idx + 1"/>
                                            
-                                        <td style="border-right:2px solid #000; text-align: center;">
+                                        <td style="border-right:1px solid #000; text-align: center; border-bottom:1px solid #000;">
                                                 <span t-esc="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[letter_idx - 1]"/>
                                         </td>
-                                        <td style="border-right:2px solid #000;">
+                                        <td style="border-right:1px solid #000; border-bottom:1px solid #000;">
                                             <br/>
                                            <div style="text-decoration:underline;"> Bank Details </div>
                                            <br/>
@@ -171,12 +175,12 @@
                                                 <div>Company Name: <span t-field="o.company_id.name"/></div> 
                                            </div>
                                         </td>
-                                        <td style="border-right:2px solid #000; "></td>
-                                        <td style="border-right:2px solid #000; "></td>
-                                        <td ></td>
+                                        <td style="border-right:1px solid #000; border-bottom:1px solid #000;"></td>
+                                        <td style="border-right:1px solid #000;border-bottom:1px solid #000; "></td>
+                                        <td style="border-bottom:1px solid #000;"></td>
 
                                     </tr>
-                                    <tr style="height:200px; border-top:2px solid #000;"></tr>
+                                    <tr style="height:200px; "></tr>
                                     
 
                                 </tbody>
@@ -186,21 +190,27 @@
 
                         </tr>
                     </table>
-                    <div style="display:flex; justify-content:space-between; border:2px solid #000; padding:5px; margin:0;">
-                        <p>Project Engineer</p>
-                        <p>Project Manager</p>
-                        <p>Operations Manager</p>
-                        <p>Client Approval</p>
-                    </div>
-                    <div style="height:20px;border:2px solid #000; margin:0;">
-                    
-                    </div>
+                    <table style="width:100%; border:1px solid #000; border-collapse:collapse; margin:0; text-align:center;">
+                        <tr>
+                            <td>Project Engineer</td>
+                            <td>Project Manager</td>
+                            <td>Operations Manager</td>
+                            <td>Client Approval</td>
+                        </tr>
+                        <tr style="height:60px;">
+                            <td style="border-top:1px solid #000;"></td>
+                            <td style="border-top:1px solid #000;"></td>
+                            <td style="border-top:1px solid #000;"></td>
+                            <td style="border-top:1px solid #000;"></td>
+                        </tr>
+                    </table>
+
                     <div class="footer" style="width:100%; font-size:15px; ">
         
                             <div style="background-color:#b30000; height:15px; width:100%;"></div>
                             
                      
-                            <div style="background-color:#000000; color:white; padding:4px 8px; display:flex; justify-content:space-between;">
+                            <div style="background-color:#000000; color:white; padding:4px 8px; ">
                                 <span style="margin-right:10px;">CR 124236</span>
                                 <span style="margin-right:10px;"><span t-field="o.company_id.name"/></span>
                                 <span style="margin-right:10px;">DOHA, QATAR</span>
